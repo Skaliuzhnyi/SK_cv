@@ -1,8 +1,8 @@
 function Footer() {
   return (
     <footer id="footer">
-      <div class="container">
-        <div class="credits">
+      <div className="container">
+        <div className="credits">
           Designed by <a href="#">SKaliuzhnyi</a>
         </div>
       </div>
