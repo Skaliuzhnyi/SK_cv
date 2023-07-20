@@ -6,8 +6,11 @@ import testimonials4 from './../img/testimonials/testimonials-4.jpg';
 
 import Project from "../components/Poroject/Poroject";
 import { projects } from './../helpers/progectList';
+import NameTyped from "../components/NameTyped/NameTyped";
+import PureCounters from "../components/PureCounter/PureCounter";
 
 function Home() {
+
   return (
     <main
       id="main"
@@ -17,19 +20,7 @@ function Home() {
         id="hero"
         className="d-flex flex-column justify-content-center align-items-center"
       >
-        <div
-          className="hero-container"
-          data-aos="fade-in"
-        >
-          <h1>Serhii Kaliuzhnyi</h1>
-          <p>
-            I'm{' '}
-            <span
-              className="typed"
-              data-typed-items="Front-end Developer"
-            ></span>
-          </p>
-        </div>
+        <NameTyped />
       </section>
 
       <section
@@ -116,63 +107,8 @@ function Home() {
             <h2>Facts</h2>
           </div>
 
-          <div className="row no-gutters">
-            <div
-              className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch"
-              data-aos="fade-up"
-            >
-              <div className="count-box">
-                <i className="bi bi-emoji-smile"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="32"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>
-                  <strong>Happy Clients</strong>
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="count-box">
-                <i className="bi bi-journal-richtext"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="41"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>
-                  <strong>Projects</strong>
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="count-box">
-                <i className="bi bi-headset"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="1453"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>
-                  <strong>Hours Of Support</strong>
-                </p>
-              </div>
-            </div>
-          </div>
+          <PureCounters />
+          
         </div>
       </section>
 
@@ -432,10 +368,18 @@ function Home() {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            {projects.map((project) => {
-              return <Project key={project.alt} className={project.className} img={project.img} href={project.href} alt={project.alt}/>
+            {projects.map((project, index) => {
+              return (
+                <Project
+                  key={project.alt}
+                  className={project.className}
+                  img={project.img1}
+                  href={project.href}
+                  alt={project.alt}
+                  index={index}
+                />
+              );
             })}
-
           </div>
         </div>
       </section>
@@ -602,26 +546,6 @@ function Home() {
                 </div>
 
                 <div className="map"></div>
-
-                {/*                       <script>
-                        window.mapOptions = {
-                          zoom: 10,
-                          zoom: 10,
-                          center_lng: 30.625025,
-                          center_lat: 50.390147,
-                          marker_ico: 'img/marker.svg',
-                        };
-
-                        let markers = [
-                          {
-                            about: {
-                              id: 'Княжий Затон',
-                              lat: 50.390147,
-                              lng: 30.625025,
-                            },
-                          },
-                        ];
-                      </script> */}
               </div>
             </div>
           </div>

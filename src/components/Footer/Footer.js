@@ -3,7 +3,7 @@ function Footer() {
     <footer id="footer">
       <div className="container">
         <div className="credits">
-          Designed by <a href="#">SKaliuzhnyi</a>
+          Designed by <a href="https://skaliuzhnyi.github.io/SK_cv/">SKaliuzhnyi</a>
         </div>
       </div>
     </footer>

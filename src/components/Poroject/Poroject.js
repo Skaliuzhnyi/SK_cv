@@ -1,4 +1,6 @@
-function Project({ className, img, href, alt  }) {
+import { NavLink } from 'react-router-dom';
+
+function Project({ className, img, href, alt, index }) {
   return (
     <div className={className}>
       <div className="portfolio-wrap">
@@ -9,19 +11,19 @@ function Project({ className, img, href, alt  }) {
         />
         <div className="portfolio-links">
           <a
-            href={href}
+            href={img}
             data-gallery="portfolioGallery"
             className="portfolio-lightbox"
             title="App 1"
           >
             <i className="bx bx-plus"></i>
           </a>
-          <a
-            href="portfolio-details-service-lux.html"
+          <NavLink
+            to={`/portfolio-details/${index}`}
             title="More Details"
           >
             <i className="bx bx-link"></i>
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>
